@@ -1,0 +1,68 @@
+html {
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+#grid {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+}
+
+#canvas-container {
+    position: relative;
+    width: 1080px;
+    height: 1080px;
+}
+
+.canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+}
+
+.animated-state {
+    -webkit-animation: fadein 2s;
+    -moz-animation: fadein 2s;
+    animation: fadein 2s;
+}
+
+#front-canvas {
+    pointer-events: auto; /* Don't mouse events to pass through to main-canvas */
+}
+
+/* #main-canvas {
+    filter: hue-rotate(0deg)
+} */
+
+/* fade in */
+  @-webkit-keyframes fadein {
+    from { opacity:0.5; }
+    to { opacity:1; 
+        transform: none;}
+  }
+  @-moz-keyframes fadein {
+    from { opacity:0.5; }
+    to { opacity:1; 
+        transform: none;
+    }
+  }
+  @keyframes fadein {
+    from { opacity:0.5;
+        -webkit-transform: translate3d(0, -2%, 0);
+        transform: translate3d(0, -2%, 0)
+    }
+    to { opacity:1; 
+        transform: none;
+    }
+  }
